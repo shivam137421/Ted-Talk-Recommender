@@ -1,0 +1,45 @@
+services:
+  # Python ML Microservice
+  - type: web
+    name: talkwise-ml
+    runtime: docker
+    dockerfilePath: ./Dockerfile.ml
+    plan: free
+    region: oregon
+    envVars:
+      - key: ML_PORT
+        value: 8000
+      - key: ML_INTERNAL_KEY
+        generateValue: true
+
+  # Express REST API Gateway
+  - type: web
+    name: talkwise-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile.backend
+    plan: free
+    region: oregon
+    envVars:
+      - key: PORT
+        value: 5000
+      - key: NODE_ENV
+        value: production
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: ML_SERVICE_URL
+        fromService:
+          type: web
+          name: talkwise-ml
+          property: host
+      - key: ML_INTERNAL_KEY
+        fromService:
+          type: web
+          name: talkwise-ml
+          envVarKey: ML_INTERNAL_KEY
+      - key: FRONTEND_URL
+        sync: false
+

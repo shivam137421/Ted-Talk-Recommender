@@ -1,0 +1,15 @@
+{
+  "raw_users_count": 12605,
+  "raw_favorites_count": 134533,
+  "mapped_interactions_total": 134456,
+  "mapped_interactions_deduped": 129557,
+  "unmapped_favorites_count": 77,
+  "unique_unmapped_titles": 2,
+  "active_users_ge_1": 12401,
+  "active_users_ge_3": 7538,
+  "active_users_ge_5": 5656,
+  "active_users_ge_10": 3311,
+  "catalog_talks_total": 2550,
+  "catalog_talks_with_interactions": 1201,
+  "catalog_talks_cold_start": 1349
+}

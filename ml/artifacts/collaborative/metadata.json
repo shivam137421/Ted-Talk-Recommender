@@ -1,0 +1,28 @@
+{
+  "model_name": "ItemItem_Cosine_k50",
+  "algorithm_class": "ItemItemCosineCF",
+  "created_at": "2026-11-17T14:06:52.756062+00:00",
+  "python_version": "3.13.6 (tags/v3.13.6:4e66535, Aug  6 2025, 14:36:00) [MSC v.1944 64 bit (AMD64)]",
+  "training_users_count": 5656,
+  "catalog_items_count": 2550,
+  "training_interactions_count": 81047,
+  "validation_metrics": {
+    "Precision@5": 0.03048090523338048,
+    "Recall@5": 0.09016049101684989,
+    "MAP@5": 0.05151756247053277,
+    "NDCG@5": 0.0685094986801167,
+    "Precision@10": 0.024381188118811882,
+    "Recall@10": 0.13697360723348045,
+    "MAP@10": 0.05715922685309915,
+    "NDCG@10": 0.08476863261640102,
+    "Precision@20": 0.018422913719943423,
+    "Recall@20": 0.2025020878733333,
+    "MAP@20": 0.0620177712319253,
+    "NDCG@20": 0.10349448151533518
+  },
+  "artifact_size_mb": 0.35,
+  "parameters": {
+    "top_k_neighbors": 50,
+    "n_items": 2550
+  }
+}
